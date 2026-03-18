@@ -32,7 +32,9 @@ export default function Home() {
     setFormData(prev => ({ ...prev, [field]: value }));
   }
 
-  const isSelected = (field: string, value: string) =>
+  type FormField = keyof typeof formData;
+
+  const isSelected = (field: FormField, value: string) =>
     formData[field] === value;
 
   useEffect(() => {
